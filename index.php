@@ -7,6 +7,10 @@ $sliders = mysqli_fetch_all($q_slider, MYSQLI_ASSOC);
 $q_setting = mysqli_query($conn, "SELECT * FROM settings ORDER BY id DESC LIMIT 1");
 $about = mysqli_fetch_assoc($q_setting);
 
+//RESUME 
+$q_resume = mysqli_query($conn, "SELECT * FROM resume ORDER BY id DESC");
+$resume = mysqli_fetch_all($q_resume, MYSQLI_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -160,6 +164,8 @@ $about = mysqli_fetch_assoc($q_setting);
 				</div>
 			</div>
 			<div class="row">
+				<?php foreach ($resume as $v) { 
+					?>
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate">
 						<span class="date">2014-2015</span>
@@ -167,7 +173,7 @@ $about = mysqli_fetch_assoc($q_setting);
 						<span class="position">Cambridge University</span>
 						<p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
 					</div>
-					<div class="resume-wrap ftco-animate">
+					<!-- <div class="resume-wrap ftco-animate">
 						<span class="date">2014-2015</span>
 						<h2>Bachelor's Degree of C.A</h2>
 						<span class="position">Cambridge University</span>
@@ -178,29 +184,13 @@ $about = mysqli_fetch_assoc($q_setting);
 						<h2>Diploma in Computer</h2>
 						<span class="position">Cambridge University</span>
 						<p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-					</div>
+					</div> -->
 				</div>
+				<?php 
+				}
+				 ?>
 
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2014-2015</span>
-						<h2>Art &amp; Creative Director</h2>
-						<span class="position">Cambridge University</span>
-						<p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-					</div>
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2014-2015</span>
-						<h2>Wordpress Developer</h2>
-						<span class="position">Cambridge University</span>
-						<p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-					</div>
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2017-2018</span>
-						<h2>UI/UX Designer</h2>
-						<span class="position">Cambridge University</span>
-						<p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-					</div>
-				</div>
+
 			</div>
 			<div class="row justify-content-center mt-5">
 				<div class="col-md-6 text-center ftco-animate">
