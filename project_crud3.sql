@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Agu 2026 pada 10.19
+-- Waktu pembuatan: 03 Agu 2026 pada 05.17
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.0.30
 
@@ -40,6 +40,33 @@ CREATE TABLE `contacts` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `product`
+--
+
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `price` decimal(15,2) NOT NULL,
+  `category` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `price`, `category`) VALUES
+(1, 'AC', 2000000.00, 'Elektronik'),
+(2, 'Kulkas', 5000000.00, 'Elektronik'),
+(3, 'T-Shirt', 40000.00, 'Pakaian'),
+(4, 'Sepatu', 200000.00, 'Sport'),
+(5, 'Kipas', 500000.00, 'Elektronik'),
+(6, 'Jam', 50000.00, 'Elektronik'),
+(7, 'Jaket', 20000.00, 'Pakaian'),
+(8, 'Cardigan', 35000.00, 'Pakaian');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `resume`
 --
 
@@ -59,7 +86,8 @@ CREATE TABLE `resume` (
 --
 
 INSERT INTO `resume` (`id`, `title`, `year_start`, `year_end`, `subtitle`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'ini aku', '1970', '2026', 'aku siapa?', 'aku gatauu', '2026-08-01 07:28:24', NULL);
+(1, 'ini aku', '1970', '2026', 'aku siapa?', 'aku gatauu', '2026-08-01 07:28:24', NULL),
+(2, 'test', '2021', '2026', 'eeq', 'eeq', '2026-08-03 01:13:35', NULL);
 
 -- --------------------------------------------------------
 
@@ -149,6 +177,12 @@ ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `resume`
 --
 ALTER TABLE `resume`
@@ -170,7 +204,8 @@ ALTER TABLE `sliders`
 -- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -183,10 +218,16 @@ ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT untuk tabel `resume`
 --
 ALTER TABLE `resume`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `settings`
