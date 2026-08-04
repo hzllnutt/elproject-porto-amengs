@@ -11,6 +11,18 @@ $about = mysqli_fetch_assoc($q_setting);
 $q_resume = mysqli_query($conn, "SELECT * FROM resume ORDER BY id DESC");
 $resume = mysqli_fetch_all($q_resume, MYSQLI_ASSOC);
 
+//skills
+$q_skills = mysqli_query($conn, "SELECT * FROM skills ORDER BY id DESC");
+$skills = mysqli_fetch_all($q_skills, MYSQLI_ASSOC);
+
+//projects
+$q_projects = mysqli_query($conn, "SELECT * FROM projects ORDER BY id DESC");
+$projects = mysqli_fetch_all($q_projects, MYSQLI_ASSOC);
+
+//my blog
+$q_blogs = mysqli_query($conn, "SELECT * FROM blogs ORDER BY id DESC");
+$blogs = mysqli_fetch_all($q_blogs, MYSQLI_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -275,7 +287,6 @@ $resume = mysqli_fetch_all($q_resume, MYSQLI_ASSOC);
 		</div>
 	</section>
 
-
 	<section class="ftco-section" id="skills-section">
 		<div class="container">
 			<div class="row justify-content-center pb-5">
@@ -286,7 +297,26 @@ $resume = mysqli_fetch_all($q_resume, MYSQLI_ASSOC);
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6 animate-box">
+				<?php 
+				foreach ($skills as $v) {
+				?>
+									<div class="col-md-6 animate-box">
+						<div class="progress-wrap ftco-animate">
+							<h3 style= "margin-bottom: <?= $v['progress'] < 10 ? '33px' : '5px' ?>;">
+								<?= htmlspecialchars ($v['name']) ?></h3>
+							<div class="progress">
+								<div class="progress-bar color-<?= $index + 1 ?>" role="progressbar" 
+								aria-valuenow="<?= $v['progress'] ?>"
+									aria-valuemin="0" aria-valuemax="100" style="width:<?= $v['progress']; ?>%">
+									<span><?= $v['progress']; ?>%</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				<?php
+				}
+				?>
+				<!-- <div class="col-md-6 animate-box">
 					<div class="progress-wrap ftco-animate">
 						<h3>Photoshop</h3>
 						<div class="progress">
@@ -351,7 +381,7 @@ $resume = mysqli_fetch_all($q_resume, MYSQLI_ASSOC);
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
@@ -367,26 +397,39 @@ $resume = mysqli_fetch_all($q_resume, MYSQLI_ASSOC);
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-4.jpg);">
+				<?php 
+				foreach ($projects as $index => $v) {
+					$no = $index + 1;
+					if ($no % 4 == 0){
+				?>
+				<div class="col-md-6">
+					<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(project-crud/assets/img/<?php echo $v['image'] ?>);">
 						<div class="overlay"></div>
 						<div class="text text-center p-4">
-							<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-							<span>Web Design</span>
+							<h3><a href="#"><?php echo $v['title'] ?></a></h3>
+							<span><?php echo $v['subtitle'] ?></span>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-8">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-5.jpg);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-							<span>Web Design</span>
-						</div>
-					</div>
-				</div>
+				<?php 
+				} else
+				?>
 
-				<div class="col-md-8">
+				<div class="col-md-6">
+					<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(project-crud/assets/img/<?php echo $v['image'] ?>);">
+						<div class="overlay"></div>
+						<div class="text text-center p-4">
+							<h3><a href="#"><?php echo $v['title'] ?></a></h3>
+							<span><?php echo $v['subtitle'] ?></span>
+						</div>
+					</div>
+				</div>
+				<?php
+				}
+				?>
+
+
+				<!-- <div class="col-md-8">
 					<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-1.jpg);">
 						<div class="overlay"></div>
 						<div class="text text-center p-4">
@@ -424,7 +467,7 @@ $resume = mysqli_fetch_all($q_resume, MYSQLI_ASSOC);
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
@@ -440,24 +483,30 @@ $resume = mysqli_fetch_all($q_resume, MYSQLI_ASSOC);
 				</div>
 			</div>
 			<div class="row d-flex">
+								<?php 
+				foreach ($blogs as $v) {
+					?>
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry justify-content-end">
-						<a href="single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+						<a href="single.html" class="block-20" style="background-image: url(project-crud/assets/img/<?php echo $v['image'] ?>);">
 						</a>
 						<div class="text mt-3 float-right d-block">
 							<div class="d-flex align-items-center mb-3 meta">
 								<p class="mb-0">
-									<span class="mr-2">June 21, 2019</span>
-									<a href="#" class="mr-2">Admin</a>
+									<span class="mr-2"><?php echo $v['created_at'] ?></span>
+									<a href="#" class="mr-2">Zelly</a>
 									<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
 								</p>
 							</div>
-							<h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+							<h3 class="heading"><a href="single.html"><?php echo $v['title'] ?></a></h3>
+							<p><?php echo $v['subtitle'] ?></p>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 d-flex ftco-animate">
+				<?php
+				}
+				?>
+				<!-- <div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry justify-content-end">
 						<a href="single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
 						</a>
@@ -490,7 +539,7 @@ $resume = mysqli_fetch_all($q_resume, MYSQLI_ASSOC);
 							<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>

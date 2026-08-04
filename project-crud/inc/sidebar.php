@@ -66,6 +66,40 @@
                             <p>Resume</p>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a
+
+                            href="skills.php"
+
+                            aria-expanded="false">
+                            <i class="fa fa-code"></i>
+                            <p>Skills</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+
+                            href="projects.php"
+
+                            aria-expanded="false">
+                            <i class="fa fa-tasks"></i>
+                            <p>Projects</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+
+                            href="blogs.php"
+
+                            aria-expanded="false">
+                            <i class="fa fa-receipt"></i>
+                            <p>Blogs</p>
+                        </a>
+                    </li>
+
                     <li class="nav-item">
                         <a
 
