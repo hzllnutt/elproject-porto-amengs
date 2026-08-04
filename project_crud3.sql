@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Agu 2026 pada 05.17
+-- Waktu pembuatan: 04 Agu 2026 pada 10.08
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.0.30
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `project_crud3`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `blogs`
+--
+
+CREATE TABLE `blogs` (
+  `id` int(11) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `subtitle` varchar(50) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `blogs`
+--
+
+INSERT INTO `blogs` (`id`, `title`, `subtitle`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'sasdasdas', 'ini aku', '6a719a6b914e9_Rapunzel_pose.webp', '2026-08-04 07:53:15', NULL);
 
 -- --------------------------------------------------------
 
@@ -63,6 +85,29 @@ INSERT INTO `product` (`id`, `name`, `price`, `category`) VALUES
 (6, 'Jam', 50000.00, 'Elektronik'),
 (7, 'Jaket', 20000.00, 'Pakaian'),
 (8, 'Cardigan', 35000.00, 'Pakaian');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `projects`
+--
+
+CREATE TABLE `projects` (
+  `id` int(11) NOT NULL,
+  `image` varchar(100) DEFAULT NULL,
+  `title` varchar(50) NOT NULL,
+  `subtitle` varchar(50) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `projects`
+--
+
+INSERT INTO `projects` (`id`, `image`, `title`, `subtitle`, `created_at`, `updated_at`) VALUES
+(2, '6a7189969c23e_20210214_193652.jpg', 'Test', '123', '2026-08-04 06:41:26', NULL),
+(3, '6a718dc6c0f0b_Toy-Story.jpg', 'asasaaaaa', 'zellyy', '2026-08-04 06:59:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -113,6 +158,28 @@ CREATE TABLE `settings` (
 
 INSERT INTO `settings` (`id`, `website_name`, `email`, `phone`, `address`, `description`, `ig`, `created_at`, `updated_at`) VALUES
 (1, 'hazellnutt.com', 'hazell@gmail.com', '08767765432', 'Bukdur Jaya', 'oke banget', 'creamyyhazell', '2026-07-30 03:07:15', '2026-07-30 03:20:57');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `skills`
+--
+
+CREATE TABLE `skills` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `progress` int(3) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `skills`
+--
+
+INSERT INTO `skills` (`id`, `name`, `progress`, `created_at`, `updated_at`) VALUES
+(3, 'PHP', 85, '2026-08-04 02:20:28', '2026-08-04 02:29:24'),
+(4, 'HTML', 70, '2026-08-04 02:26:13', '2026-08-04 02:41:52');
 
 -- --------------------------------------------------------
 
@@ -171,6 +238,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
 --
 
 --
+-- Indeks untuk tabel `blogs`
+--
+ALTER TABLE `blogs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `contacts`
 --
 ALTER TABLE `contacts`
@@ -183,6 +256,12 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `projects`
+--
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `resume`
 --
 ALTER TABLE `resume`
@@ -192,6 +271,12 @@ ALTER TABLE `resume`
 -- Indeks untuk tabel `settings`
 --
 ALTER TABLE `settings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `skills`
+--
+ALTER TABLE `skills`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -212,6 +297,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `blogs`
+--
+ALTER TABLE `blogs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT untuk tabel `contacts`
 --
 ALTER TABLE `contacts`
@@ -222,6 +313,12 @@ ALTER TABLE `contacts`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT untuk tabel `projects`
+--
+ALTER TABLE `projects`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `resume`
@@ -236,6 +333,12 @@ ALTER TABLE `settings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT untuk tabel `skills`
+--
+ALTER TABLE `skills`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT untuk tabel `sliders`
 --
 ALTER TABLE `sliders`
@@ -245,7 +348,7 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
