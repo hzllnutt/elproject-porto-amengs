@@ -1,5 +1,5 @@
 <?php
-include "project-crud/config/koneksi.php";
+include "admin/config/koneksi.php";
 $q_slider = mysqli_query($conn, "SELECT * FROM sliders WHERE is_active=1 ORDER BY id DESC LIMIT 2");
 $sliders = mysqli_fetch_all($q_slider, MYSQLI_ASSOC);
 
@@ -22,6 +22,19 @@ $projects = mysqli_fetch_all($q_projects, MYSQLI_ASSOC);
 //my blog
 $q_blogs = mysqli_query($conn, "SELECT * FROM blogs ORDER BY id DESC");
 $blogs = mysqli_fetch_all($q_blogs, MYSQLI_ASSOC);
+
+//contact
+if (isset($_POST['submit'])) {
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$subject = $_POST['subject'];
+	$message = $_POST['message'];
+
+	//
+	///
+	$insert = mysqli_query($conn, "INSERT INTO contacts (name, email, subject, message) VALUES ('$name','$email','$subject','$message')");
+	header("location:index.php?tambah=success");
+}
 
 ?>
 <!DOCTYPE html>
@@ -85,16 +98,17 @@ $blogs = mysqli_fetch_all($q_blogs, MYSQLI_ASSOC);
 					<div class="overlay"></div>
 					<div class="container">
 						<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-							<div class="one-third js-fullheight order-md-last img" style="background-image:url(project-crud/assets/img/<?= $v['image']?>);">
+							<div class="one-third js-fullheight order-md-last img" style="background-image:url(project-crud/assets/img/<?= $v['image'] ?>);">
 								<div class="overlay"></div>
 							</div>
 							<div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 								<div class="text">
 									<span class="subheading">Hello!</span>
-									<h1 class="mb-4 mt-3"><?= $title['0'] ?> <span><?php array_shift($title); echo implode(" ", $title)?></span></h1>
-									<h2 class="mb-1"><?= $v['subtitle']?></h2>
-									<p class="mb-4 text-light"><?= $v['description']?></p>
-									<p><a href="<?= $v['button1_link']?>" class="btn btn-primary py-3 px-4"><?= $v['button1_text']?></a> <a href="<?= $v['button2_link']?>" class="btn btn-white btn-outline-white py-3 px-4"><?= $v['button1_text']?></a></p>
+									<h1 class="mb-4 mt-3"><?= $title['0'] ?> <span><?php array_shift($title);
+																					echo implode(" ", $title) ?></span></h1>
+									<h2 class="mb-1"><?= $v['subtitle'] ?></h2>
+									<p class="mb-4 text-light"><?= $v['description'] ?></p>
+									<p><a href="<?= $v['button1_link'] ?>" class="btn btn-primary py-3 px-4"><?= $v['button1_text'] ?></a> <a href="<?= $v['button2_link'] ?>" class="btn btn-white btn-outline-white py-3 px-4"><?= $v['button1_text'] ?></a></p>
 								</div>
 							</div>
 						</div>
@@ -132,7 +146,7 @@ $blogs = mysqli_fetch_all($q_blogs, MYSQLI_ASSOC);
 				<div class="col-md-6 col-lg-5 d-flex">
 					<div class="img-about img d-flex align-items-stretch">
 						<div class="overlay"></div>
-						<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(project-crud/assets/img/<?= $v['image']?>);">
+						<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(project-crud/assets/img/<?= $v['image'] ?>);">
 						</div>
 					</div>
 				</div>
@@ -145,10 +159,10 @@ $blogs = mysqli_fetch_all($q_blogs, MYSQLI_ASSOC);
 							<ul class="about-info mt-4 px-md-0 px-2">
 								<li class="d-flex"><span>Name:</span> <span>Nuramalia Putri</span></li>
 								<li class="d-flex"><span>Date of birth:</span> <span>07 January 2002</span></li>
-								<li class="d-flex"><span>Address:</span> <span><?= $about['address']?></span></li>
-								<li class="d-flex"><span>Website :</span> <span><?= $about['website_name']?></span></li>
-								<li class="d-flex"><span>Email:</span> <span><?= $about['email']?></span></li>
-								<li class="d-flex"><span>Phone: </span> <span><?= $about['phone']?></span></li>
+								<li class="d-flex"><span>Address:</span> <span><?= $about['address'] ?></span></li>
+								<li class="d-flex"><span>Website :</span> <span><?= $about['website_name'] ?></span></li>
+								<li class="d-flex"><span>Email:</span> <span><?= $about['email'] ?></span></li>
+								<li class="d-flex"><span>Phone: </span> <span><?= $about['phone'] ?></span></li>
 							</ul>
 						</div>
 					</div>
@@ -176,16 +190,16 @@ $blogs = mysqli_fetch_all($q_blogs, MYSQLI_ASSOC);
 				</div>
 			</div>
 			<div class="row">
-				<?php foreach ($resume as $v) { 
-					?>
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2014-2015</span>
-						<h2>Master Degree of Design</h2>
-						<span class="position">Cambridge University</span>
-						<p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-					</div>
-					<!-- <div class="resume-wrap ftco-animate">
+				<?php foreach ($resume as $v) {
+				?>
+					<div class="col-md-6">
+						<div class="resume-wrap ftco-animate">
+							<span class="date">2014-2015</span>
+							<h2>Master Degree of Design</h2>
+							<span class="position">Cambridge University</span>
+							<p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+						</div>
+						<!-- <div class="resume-wrap ftco-animate">
 						<span class="date">2014-2015</span>
 						<h2>Bachelor's Degree of C.A</h2>
 						<span class="position">Cambridge University</span>
@@ -197,10 +211,10 @@ $blogs = mysqli_fetch_all($q_blogs, MYSQLI_ASSOC);
 						<span class="position">Cambridge University</span>
 						<p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
 					</div> -->
-				</div>
-				<?php 
+					</div>
+				<?php
 				}
-				 ?>
+				?>
 
 
 			</div>
@@ -297,16 +311,16 @@ $blogs = mysqli_fetch_all($q_blogs, MYSQLI_ASSOC);
 				</div>
 			</div>
 			<div class="row">
-				<?php 
+				<?php
 				foreach ($skills as $v) {
 				?>
-									<div class="col-md-6 animate-box">
+					<div class="col-md-6 animate-box">
 						<div class="progress-wrap ftco-animate">
-							<h3 style= "margin-bottom: <?= $v['progress'] < 10 ? '33px' : '5px' ?>;">
-								<?= htmlspecialchars ($v['name']) ?></h3>
+							<h3 style="margin-bottom: <?= $v['progress'] < 10 ? '33px' : '5px' ?>;">
+								<?= htmlspecialchars($v['name']) ?></h3>
 							<div class="progress">
-								<div class="progress-bar color-<?= $index + 1 ?>" role="progressbar" 
-								aria-valuenow="<?= $v['progress'] ?>"
+								<div class="progress-bar color-<?= $index + 1 ?>" role="progressbar"
+									aria-valuenow="<?= $v['progress'] ?>"
 									aria-valuemin="0" aria-valuemax="100" style="width:<?= $v['progress']; ?>%">
 									<span><?= $v['progress']; ?>%</span>
 								</div>
@@ -397,33 +411,33 @@ $blogs = mysqli_fetch_all($q_blogs, MYSQLI_ASSOC);
 				</div>
 			</div>
 			<div class="row">
-				<?php 
+				<?php
 				foreach ($projects as $index => $v) {
 					$no = $index + 1;
-					if ($no % 4 == 0){
+					if ($no % 4 == 0) {
 				?>
-				<div class="col-md-6">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(project-crud/assets/img/<?php echo $v['image'] ?>);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="#"><?php echo $v['title'] ?></a></h3>
-							<span><?php echo $v['subtitle'] ?></span>
+						<div class="col-md-6">
+							<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(project-crud/assets/img/<?php echo $v['image'] ?>);">
+								<div class="overlay"></div>
+								<div class="text text-center p-4">
+									<h3><a href="#"><?php echo $v['title'] ?></a></h3>
+									<span><?php echo $v['subtitle'] ?></span>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-				<?php 
-				} else
-				?>
+					<?php
+					} else
+					?>
 
-				<div class="col-md-6">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(project-crud/assets/img/<?php echo $v['image'] ?>);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="#"><?php echo $v['title'] ?></a></h3>
-							<span><?php echo $v['subtitle'] ?></span>
+					<div class="col-md-6">
+						<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(project-crud/assets/img/<?php echo $v['image'] ?>);">
+							<div class="overlay"></div>
+							<div class="text text-center p-4">
+								<h3><a href="#"><?php echo $v['title'] ?></a></h3>
+								<span><?php echo $v['subtitle'] ?></span>
+							</div>
 						</div>
 					</div>
-				</div>
 				<?php
 				}
 				?>
@@ -483,26 +497,26 @@ $blogs = mysqli_fetch_all($q_blogs, MYSQLI_ASSOC);
 				</div>
 			</div>
 			<div class="row d-flex">
-								<?php 
+				<?php
 				foreach ($blogs as $v) {
-					?>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="single.html" class="block-20" style="background-image: url(project-crud/assets/img/<?php echo $v['image'] ?>);">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<div class="d-flex align-items-center mb-3 meta">
-								<p class="mb-0">
-									<span class="mr-2"><?php echo $v['created_at'] ?></span>
-									<a href="#" class="mr-2">Zelly</a>
-									<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-								</p>
+				?>
+					<div class="col-md-4 d-flex ftco-animate">
+						<div class="blog-entry justify-content-end">
+							<a href="single.html" class="block-20" style="background-image: url(project-crud/assets/img/<?php echo $v['image'] ?>);">
+							</a>
+							<div class="text mt-3 float-right d-block">
+								<div class="d-flex align-items-center mb-3 meta">
+									<p class="mb-0">
+										<span class="mr-2"><?php echo $v['created_at'] ?></span>
+										<a href="#" class="mr-2">Zelly</a>
+										<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+									</p>
+								</div>
+								<h3 class="heading"><a href="single.html"><?php echo $v['title'] ?></a></h3>
+								<p><?php echo $v['subtitle'] ?></p>
 							</div>
-							<h3 class="heading"><a href="single.html"><?php echo $v['title'] ?></a></h3>
-							<p><?php echo $v['subtitle'] ?></p>
 						</div>
 					</div>
-				</div>
 				<?php
 				}
 				?>
@@ -646,21 +660,21 @@ $blogs = mysqli_fetch_all($q_blogs, MYSQLI_ASSOC);
 
 			<div class="row no-gutters block-9">
 				<div class="col-md-6 order-md-last d-flex">
-					<form action="#" class="bg-light p-4 p-md-5 contact-form">
+					<form method="post" action="#" class="bg-light p-4 p-md-5 contact-form">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Name">
+							<input type="text" class="form-control" name="name" placeholder="Your Name">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Email">
+							<input type="text" class="form-control" name="email" placeholder="Your Email">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Subject">
+							<input type="text" class="form-control" name="subject" placeholder="Subject">
 						</div>
 						<div class="form-group">
-							<textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+							<textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
 						</div>
 						<div class="form-group">
-							<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+							<input type="submit" name="submit" value="Send Message" class="btn btn-primary py-3 px-5">
 						</div>
 					</form>
 

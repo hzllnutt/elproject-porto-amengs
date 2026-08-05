@@ -3,8 +3,6 @@ include "config/koneksi.php";
 session_start();
 session_regenerate_id();
 
-
-
 if (isset($_POST['login'])) {
   $email = $_POST['email'];
   $pass = sha1($_POST['password']);
