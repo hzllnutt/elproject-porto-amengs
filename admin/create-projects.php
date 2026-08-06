@@ -27,7 +27,7 @@ if (isset($_POST['save'])) {
         //masukkan ke dalam users sebutkan kolom di table user nilainya diambil dari user nginput
         if ($id) {
             //query update
-            $update = mysqli_query($conn, "UPDATE projects SET title='$title', subtitle='$subtitle' WHERE id='$id'");
+            $update = mysqli_query($conn, "UPDATE projects SET title='$title', subtitle='$subtitle', image='$filename' WHERE id='$id'");
             header("location:app.php?page=projects&update=berhasil");
         } else {
             $insert = mysqli_query($conn, "INSERT INTO projects (title, subtitle, image) VALUES ('$title','$subtitle', '$filename')");
