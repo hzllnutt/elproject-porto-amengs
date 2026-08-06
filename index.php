@@ -603,7 +603,7 @@ if (isset($_POST['submit'])) {
 				<div class="col-md-7 ftco-animate text-center">
 					<h2>I'm <span>Available</span> for Freelance</h2>
 					<p>Open for freelance opportunities!</p>
-					<p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">Hire me</a></p>
+					<p class="mb-0"><a href="https://www.linkedin.com/in/nramaliaptri/" class="btn btn-primary py-3 px-5">Hire me</a></p>
 				</div>
 			</div>
 		</div>
