@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "project_crud3";
+$dbname = "porto-ameng";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);

@@ -15,7 +15,7 @@ if (isset($_POST['save'])) {
     //masukkan ke dalam users sebutkan kolom di table user nilainya diambil dari user nginput
     if ($id) {
         //query update
-        $update = mysqli_query($conn, "UPDATE resume SET title='$title', subtitle='$subtitle', description='$description,' year_start='$year_start', year_end='$year_end'  WHERE id='$id'");
+        $update = mysqli_query($conn, "UPDATE resume SET title='$title', subtitle='$subtitle', description='$description' year_start='$year_start', year_end='$year_end'  WHERE id='$id'");
         header("location:app.php?page=resume&update=berhasil");
     } else {
         $insert = mysqli_query($conn, "INSERT INTO resume (title, subtitle, description, year_start, year_end) VALUES('$title','$subtitle','$description','$year_start','$year_end')");

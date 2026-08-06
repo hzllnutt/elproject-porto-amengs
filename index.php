@@ -78,10 +78,10 @@ if (isset($_POST['submit'])) {
 					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-					<li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
+					<!-- <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li> -->
 					<li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
 					<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
-					<li class="nav-item"><a href="#blog-section" class="nav-link"><span>My Blog</span></a></li>
+					<!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>My Blog</span></a></li> -->
 					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 					<li class="nav-item"><a href="admin/index.php" class="nav-link"><span>Login</span></a></li>
 				</ul>
@@ -155,7 +155,7 @@ if (isset($_POST['submit'])) {
 						<div class="col-md-12 heading-section ftco-animate">
 							<h1 class="big">About</h1>
 							<h2 class="mb-4">About Me</h2>
-							<p>Ini adalah rapunzel yang tinggal di bukdur jaya.</p>
+							<p>Halo, lets get to know me better!</p>
 							<ul class="about-info mt-4 px-md-0 px-2">
 								<li class="d-flex"><span>Name:</span> <span>Nuramalia Putri</span></li>
 								<li class="d-flex"><span>Date of birth:</span> <span>07 January 2002</span></li>
@@ -307,7 +307,7 @@ if (isset($_POST['submit'])) {
 				<div class="col-md-12 heading-section text-center ftco-animate">
 					<h1 class="big big-2">Skills</h1>
 					<h2 class="mb-4">My Skills</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+					<p>Here are some of my skills and tools I've learned and applied</p>
 				</div>
 			</div>
 			<div class="row">
@@ -406,8 +406,8 @@ if (isset($_POST['submit'])) {
 			<div class="row justify-content-center pb-5">
 				<div class="col-md-12 heading-section text-center ftco-animate">
 					<h1 class="big big-2">Projects</h1>
-					<h2 class="mb-4">Our Projects</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+					<h2 class="mb-4">My Projects</h2>
+					<p>A collection of projects where I've applied my skills and knowledge.</p>
 				</div>
 			</div>
 			<div class="row">
@@ -601,8 +601,8 @@ if (isset($_POST['submit'])) {
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-7 ftco-animate text-center">
-					<h2>I'm <span>Available</span> for freelancing</h2>
-					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+					<h2>I'm <span>Available</span> for Freelance</h2>
+					<p>Open for freelance opportunities!</p>
 					<p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5">Hire me</a></p>
 				</div>
 			</div>
@@ -694,11 +694,11 @@ if (isset($_POST['submit'])) {
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
 						<h2 class="ftco-heading-2">About</h2>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<p>Hi, I'm Nuramalia Putri — a fresh graduate passionate about web development and data analysis.</p>
 						<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
 							<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
 							<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-							<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+							<li class="ftco-animate"><a href="https://www.instagram.com/nramaliaaaptr?igsh=NXEwaW44MDh2dmRv&utm_source=qr"><span class="icon-instagram"></span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -730,9 +730,9 @@ if (isset($_POST['submit'])) {
 						<h2 class="ftco-heading-2">Have a Questions?</h2>
 						<div class="block-23 mb-3">
 							<ul>
-								<li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-								<li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-								<li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+								<li><span class="icon icon-map-marker"></span><span class="text">Jakarta, Indonesia</span></li>
+								<li><a href="#"><span class="icon icon-phone"></span><span class="text">+62 812 xxxx xxxx</span></a></li>
+								<li><a href="#"><span class="icon icon-envelope"></span><span class="text">nuramaliaptri@gmail.com</span></a></li>
 							</ul>
 						</div>
 					</div>
