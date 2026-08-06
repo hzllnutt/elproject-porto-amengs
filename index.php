@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">Clark</a>
+			<a class="navbar-brand" href="index.html">Portofolio</a>
 			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
@@ -83,7 +83,7 @@ if (isset($_POST['submit'])) {
 					<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
 					<li class="nav-item"><a href="#blog-section" class="nav-link"><span>My Blog</span></a></li>
 					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-					<li class="nav-item"><a href="project-crud/index.php" class="nav-link"><span>Login</span></a></li>
+					<li class="nav-item"><a href="admin/index.php" class="nav-link"><span>Login</span></a></li>
 				</ul>
 			</div>
 		</div>
@@ -98,17 +98,17 @@ if (isset($_POST['submit'])) {
 					<div class="overlay"></div>
 					<div class="container">
 						<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-							<div class="one-third js-fullheight order-md-last img" style="background-image:url(project-crud/assets/img/<?= $v['image'] ?>);">
+							<div class="one-third js-fullheight order-md-last img" style="background-image:url(admin/assets/img/<?= $v['image'] ?>);">
 								<div class="overlay"></div>
 							</div>
 							<div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 								<div class="text">
-									<span class="subheading">Hello!</span>
+									<span class="subheading">Hello, ini aku!</span>
 									<h1 class="mb-4 mt-3"><?= $title['0'] ?> <span><?php array_shift($title);
 																					echo implode(" ", $title) ?></span></h1>
 									<h2 class="mb-1"><?= $v['subtitle'] ?></h2>
 									<p class="mb-4 text-light"><?= $v['description'] ?></p>
-									<p><a href="<?= $v['button1_link'] ?>" class="btn btn-primary py-3 px-4"><?= $v['button1_text'] ?></a> <a href="<?= $v['button2_link'] ?>" class="btn btn-white btn-outline-white py-3 px-4"><?= $v['button1_text'] ?></a></p>
+									<p><a href="<?= $v['button1_link'] ?>" class="btn btn-primary py-3 px-4"><?= $v['button1_text'] ?></a> <a href="<?= $v['button2_link'] ?>" class="btn btn-white btn-outline-white py-3 px-4"><?= $v['button2_text'] ?></a></p>
 								</div>
 							</div>
 						</div>
@@ -146,7 +146,7 @@ if (isset($_POST['submit'])) {
 				<div class="col-md-6 col-lg-5 d-flex">
 					<div class="img-about img d-flex align-items-stretch">
 						<div class="overlay"></div>
-						<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(project-crud/assets/img/<?= $v['image'] ?>);">
+						<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(admin/assets/img/<?= $v['image'] ?>);">
 						</div>
 					</div>
 				</div>
@@ -160,7 +160,7 @@ if (isset($_POST['submit'])) {
 								<li class="d-flex"><span>Name:</span> <span>Nuramalia Putri</span></li>
 								<li class="d-flex"><span>Date of birth:</span> <span>07 January 2002</span></li>
 								<li class="d-flex"><span>Address:</span> <span><?= $about['address'] ?></span></li>
-								<li class="d-flex"><span>Website :</span> <span><?= $about['website_name'] ?></span></li>
+								<li class="d-flex"><span>Instagram:</span> <span><?= $about['instagram_link'] ?></span></li>
 								<li class="d-flex"><span>Email:</span> <span><?= $about['email'] ?></span></li>
 								<li class="d-flex"><span>Phone: </span> <span><?= $about['phone'] ?></span></li>
 							</ul>
@@ -417,7 +417,7 @@ if (isset($_POST['submit'])) {
 					if ($no % 4 == 0) {
 				?>
 						<div class="col-md-6">
-							<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(project-crud/assets/img/<?php echo $v['image'] ?>);">
+							<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(admin/assets/img/<?php echo $v['image'] ?>);">
 								<div class="overlay"></div>
 								<div class="text text-center p-4">
 									<h3><a href="#"><?php echo $v['title'] ?></a></h3>
@@ -430,7 +430,7 @@ if (isset($_POST['submit'])) {
 					?>
 
 					<div class="col-md-6">
-						<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(project-crud/assets/img/<?php echo $v['image'] ?>);">
+						<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(admin/assets/img/<?php echo $v['image'] ?>);">
 							<div class="overlay"></div>
 							<div class="text text-center p-4">
 								<h3><a href="#"><?php echo $v['title'] ?></a></h3>
@@ -502,7 +502,7 @@ if (isset($_POST['submit'])) {
 				?>
 					<div class="col-md-4 d-flex ftco-animate">
 						<div class="blog-entry justify-content-end">
-							<a href="single.html" class="block-20" style="background-image: url(project-crud/assets/img/<?php echo $v['image'] ?>);">
+							<a href="single.html" class="block-20" style="background-image: url(admin/assets/img/<?php echo $v['image'] ?>);">
 							</a>
 							<div class="text mt-3 float-right d-block">
 								<div class="d-flex align-items-center mb-3 meta">
