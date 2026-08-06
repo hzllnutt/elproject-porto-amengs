@@ -160,7 +160,7 @@ if (isset($_POST['submit'])) {
 								<li class="d-flex"><span>Name:</span> <span>Nuramalia Putri</span></li>
 								<li class="d-flex"><span>Date of birth:</span> <span>07 January 2002</span></li>
 								<li class="d-flex"><span>Address:</span> <span><?= $about['address'] ?></span></li>
-								<li class="d-flex"><span>Instagram:</span> <span><?= $about['instagram_link'] ?></span></li>
+								<li class="d-flex"><span>Instagram:</span> <span><?= $about['ig'] ?></span></li>
 								<li class="d-flex"><span>Email:</span> <span><?= $about['email'] ?></span></li>
 								<li class="d-flex"><span>Phone: </span> <span><?= $about['phone'] ?></span></li>
 							</ul>
@@ -169,10 +169,10 @@ if (isset($_POST['submit'])) {
 					<div class="counter-wrap ftco-animate d-flex mt-md-3">
 						<div class="text">
 							<p class="mb-4">
-								<span class="number" data-number="120">0</span>
+								<!-- <span class="number" data-number="120">0</span>
 								<span>Project complete</span>
-							</p>
-							<p><a href="#" class="btn btn-primary py-3 px-3">Download CV</a></p>
+							</p> -->
+							<!-- <p><a href="#" class="btn btn-primary py-3 px-3">Download CV</a></p> -->
 						</div>
 					</div>
 				</div>
@@ -186,7 +186,7 @@ if (isset($_POST['submit'])) {
 				<div class="col-md-10 heading-section text-center ftco-animate">
 					<h1 class="big big-2">Resume</h1>
 					<h2 class="mb-4">Resume</h2>
-					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+					<!-- <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p> -->
 				</div>
 			</div>
 			<div class="row">
@@ -220,13 +220,13 @@ if (isset($_POST['submit'])) {
 			</div>
 			<div class="row justify-content-center mt-5">
 				<div class="col-md-6 text-center ftco-animate">
-					<p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
+					<!-- <p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p> -->
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="ftco-section" id="services-section">
+	<!-- <section class="ftco-section" id="services-section">
 		<div class="container">
 			<div class="row justify-content-center py-5 mt-5">
 				<div class="col-md-12 heading-section text-center ftco-animate">
@@ -299,7 +299,7 @@ if (isset($_POST['submit'])) {
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<section class="ftco-section" id="skills-section">
 		<div class="container">
@@ -487,7 +487,7 @@ if (isset($_POST['submit'])) {
 	</section>
 
 
-	<section class="ftco-section" id="blog-section">
+	<!-- <section class="ftco-section" id="blog-section">
 		<div class="container">
 			<div class="row justify-content-center mb-5 pb-5">
 				<div class="col-md-7 heading-section text-center ftco-animate">
@@ -558,7 +558,7 @@ if (isset($_POST['submit'])) {
 		</div>
 	</section>
 
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+	<!-- <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
 		<div class="container">
 			<div class="row d-md-flex align-items-center">
 				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
@@ -595,9 +595,9 @@ if (isset($_POST['submit'])) {
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
-	<section class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
+	<section class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/doremon.webp)">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-7 ftco-animate text-center">
@@ -615,7 +615,7 @@ if (isset($_POST['submit'])) {
 				<div class="col-md-7 heading-section text-center ftco-animate">
 					<h1 class="big big-2">Contact</h1>
 					<h2 class="mb-4">Contact Me</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+					<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p> -->
 				</div>
 			</div>
 
@@ -626,7 +626,7 @@ if (isset($_POST['submit'])) {
 							<span class="icon-map-signs"></span>
 						</div>
 						<h3 class="mb-4">Address</h3>
-						<p>198 West 21th Street, Suite 721 New York NY 10016</p>
+						<p>Jalan Bukit Duri, JakSel</p>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -635,7 +635,7 @@ if (isset($_POST['submit'])) {
 							<span class="icon-phone2"></span>
 						</div>
 						<h3 class="mb-4">Contact Number</h3>
-						<p><a href="tel://1234567920">+ 1235 2355 98</a></p>
+						<p><a href="tel://6281285490811">+ 62 812 8549 0811</a></p>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -644,7 +644,7 @@ if (isset($_POST['submit'])) {
 							<span class="icon-paper-plane"></span>
 						</div>
 						<h3 class="mb-4">Email Address</h3>
-						<p><a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+						<p><a href="mailto:nuramaliaptri@gmail.com">nuramaliaptri@gmail.com</a></p>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -652,8 +652,8 @@ if (isset($_POST['submit'])) {
 						<div class="icon d-flex align-items-center justify-content-center">
 							<span class="icon-globe"></span>
 						</div>
-						<h3 class="mb-4">Website</h3>
-						<p><a href="#">yoursite.com</a></p>
+						<h3 class="mb-4">Instagram</h3>
+						<p><a href="https://www.instagram.com/nramaliaaaptr?igsh=NXEwaW44MDh2dmRv&utm_source=qr">nramaliaaaptr</a></p>
 					</div>
 				</div>
 			</div>
@@ -681,7 +681,7 @@ if (isset($_POST['submit'])) {
 				</div>
 
 				<div class="col-md-6 d-flex">
-					<div class="img" style="background-image: url(images/about.jpg);"></div>
+					<div class="img" style="background-image: url(images/zell.webp);"></div>
 				</div>
 			</div>
 		</div>
@@ -708,13 +708,12 @@ if (isset($_POST['submit'])) {
 						<ul class="list-unstyled">
 							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
 							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
-							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Services</a></li>
 							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Projects</a></li>
 							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
 						</ul>
 					</div>
 				</div>
-				<div class="col-md">
+				<!-- <div class="col-md">
 					<div class="ftco-footer-widget mb-4">
 						<h2 class="ftco-heading-2">Services</h2>
 						<ul class="list-unstyled">
@@ -725,7 +724,7 @@ if (isset($_POST['submit'])) {
 							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Graphic Design</a></li>
 						</ul>
 					</div>
-				</div>
+				</div> -->
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
 						<h2 class="ftco-heading-2">Have a Questions?</h2>
