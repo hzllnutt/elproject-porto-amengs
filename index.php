@@ -103,7 +103,7 @@ if (isset($_POST['submit'])) {
 							</div>
 							<div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 								<div class="text">
-									<span class="subheading">Hello, ini aku!</span>
+									<span class="subheading">Hello, I'am</span>
 									<h1 class="mb-4 mt-3"><?= $title['0'] ?> <span><?php array_shift($title);
 																					echo implode(" ", $title) ?></span></h1>
 									<h2 class="mb-1"><?= $v['subtitle'] ?></h2>
@@ -194,10 +194,10 @@ if (isset($_POST['submit'])) {
 				?>
 					<div class="col-md-6">
 						<div class="resume-wrap ftco-animate">
-							<span class="date">2014-2015</span>
-							<h2>Master Degree of Design</h2>
-							<span class="position">Cambridge University</span>
-							<p class="mt-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+							<span class="date"><?= $v['year_start'] ?> - <?= $v['year_end'] ?></span>
+							<h2><?= $v['title'] ?></h2>
+							<span class="position"><?= $v['subtitle'] ?></span>
+							<p class="mt-4"><?= $v['description'] ?></p>
 						</div>
 						<!-- <div class="resume-wrap ftco-animate">
 						<span class="date">2014-2015</span>
@@ -406,8 +406,8 @@ if (isset($_POST['submit'])) {
 			<div class="row justify-content-center pb-5">
 				<div class="col-md-12 heading-section text-center ftco-animate">
 					<h1 class="big big-2">Projects</h1>
-					<h2 class="mb-4">My Projects</h2>
-					<p>A collection of projects where I've applied my skills and knowledge.</p>
+					<h2 class="mb-4">Our Projects</h2>
+					<p>A collection of projects where we've applied our skills and knowledge.</p>
 				</div>
 			</div>
 			<div class="row">
