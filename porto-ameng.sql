@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Agu 2026 pada 01.11
--- Versi server: 10.4.28-MariaDB
--- Versi PHP: 8.2.4
+-- Waktu pembuatan: 07 Agu 2026 pada 06.27
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -113,8 +113,8 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`id`, `image`, `title`, `subtitle`, `created_at`, `updated_at`) VALUES
-(2, '6a750b574050b_WhatsApp Image 2026-08-06 at 23.43.11.jpeg', 'Data Analyst', 'Membuat Visualisasi Data Sederhana', '2026-08-04 06:41:26', NULL),
-(3, '6a750b4c70c15_WhatsApp Image 2026-08-06 at 23.41.26.jpeg', 'Pengembangan Aplikasi SMARTHR Manajemen Data Karya', 'Project KKP', '2026-08-04 06:59:18', NULL);
+(2, '6a752bf36bf7e_analyst.jpg', 'Membuat Visualisasi Data Sederhana', 'Proyek Akhir Studi Independen ', '2026-08-04 06:41:26', NULL),
+(3, '6a755e0cc696d_halwa.jpg', 'Mengelola operasional harian akun Instagram ', 'Halwa Bakes', '2026-08-04 06:59:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -141,7 +141,7 @@ INSERT INTO `resume` (`id`, `title`, `year_start`, `year_end`, `subtitle`, `desc
 (7, 'Admin Penjualan', '2026', '2026', 'Halwa Bakes', 'Bekerja di sebuah home bakery sebagai admin chat dan sosial media ', '2026-08-06 15:42:32', NULL),
 (8, 'Studi Independen Bersertifikat', '2023', '2023', 'Orbit Kampus Akademi', 'Mempelajari dasar Machine Learning, Data Science dan Artificial Intelligence', '2026-08-06 15:57:54', NULL),
 (9, 'Studi Independen Bersertifikat', '2024', '2024', 'Karier.mu Akademi ', 'Mempelajari dasar konsep Data Analyst, penerapan dibidang bisnis dan pembuatan dashboard visualisasi data', '2026-08-06 15:58:55', NULL),
-(10, 'Bachelor of Informatics Engineering', '2021', '2025', 'Universitas Indraprasta PGRI', 'Mempelajari dasar-dasar ilmu komputer, bahasa pemrograman serta konsep-konsep utama dalam bidang Teknik Informatika.	', '2026-08-06 16:00:56', NULL);
+(10, 'Bachelor of Informatics Engineering', '2021', '2025', 'Universitas Indraprasta PGRI', 'Mempelajari dasar-dasar ilmu komputer, bahasa pemrograman serta konsep-konsep utama dalam bidang Teknik Informatika.	', '2026-08-06 16:00:56', '2026-08-07 03:29:04');
 
 -- --------------------------------------------------------
 
@@ -166,7 +166,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `website_name`, `email`, `phone`, `address`, `description`, `ig`, `created_at`, `updated_at`) VALUES
-(1, 'linkedin.com/in/nramaliaptri', 'nuramaliaptri@gmail.com', '081285490811', 'Jalan Bukit Duri Tanjakan, Tebet, Jakarta Selatan', '', 'creamyyhazell', '2026-07-30 03:07:15', '2026-08-05 14:07:21');
+(1, 'linkedin.com/in/nramaliaptri', 'nuramaliaptri@gmail.com', '081285490811', 'Jalan Bukit Duri Tanjakan, Tebet, Jakarta Selatan', '', 'nramaliaaaptr', '2026-07-30 03:07:15', '2026-08-07 01:27:49');
 
 -- --------------------------------------------------------
 
@@ -219,7 +219,7 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `title`, `subtitle`, `description`, `button1_text`, `button1_link`, `button2_text`, `button2_link`, `image`, `is_active`, `created_at`, `updated_at`) VALUES
-(5, 'Nuramalia Putri', 'Informatics Engineering', 'Data Analyst || Web Development.', 'instagram', 'https://www.instagram.com/nramaliaaaptr?igsh=NXEwa', 'linkedin', 'https://www.linkedin.com/in/nramaliaptri', '6a747600c442d_amg.jpeg', 1, '2026-08-01 04:20:05', '2026-08-06 14:27:48');
+(5, 'Nuramalia Putri', 'Informatics Engineering', 'Fresh Graduate', 'instagram', 'https://www.instagram.com/nramaliaaaptr?igsh=NXEwa', 'linkedin', 'https://www.linkedin.com/in/nramaliaptri', '6a747600c442d_amg.jpeg', 1, '2026-08-01 04:20:05', '2026-08-07 04:17:05');
 
 -- --------------------------------------------------------
 
