@@ -8,7 +8,7 @@ $q_setting = mysqli_query($conn, "SELECT * FROM settings ORDER BY id DESC LIMIT 
 $about = mysqli_fetch_assoc($q_setting);
 
 //RESUME 
-$q_resume = mysqli_query($conn, "SELECT * FROM resume ORDER BY id DESC");
+$q_resume = mysqli_query($conn, "SELECT * FROM resume ORDER BY id ASC");
 $resume = mysqli_fetch_all($q_resume, MYSQLI_ASSOC);
 
 //skills
@@ -61,6 +61,8 @@ if (isset($_POST['submit'])) {
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
+
+	<link rel="stylesheet" href="css/custom.css">
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -681,7 +683,7 @@ if (isset($_POST['submit'])) {
 				</div>
 
 				<div class="col-md-6 d-flex">
-					<div class="img" style="background-image: url(images/zell.webp);"></div>
+					<div class="img" style="background-image: url(images/doraemon.gif);"></div>
 				</div>
 			</div>
 		</div>
